@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="nav">
+            <%= link_to 'index', root_path %>
+            <%= link_to 'posts', posts_path %>
+            <%= link_to 'new post', new_post_path %>
+        </div>
+        
+        <div id="app">
+            <%= yield %>
+        </div>
+        
+    </body>
+
+</html>
