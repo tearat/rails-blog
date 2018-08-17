@@ -1,1 +1,6 @@
-<li><%= link_to post.title, post_path(post) %> (<%= post.summary %>)</li>
+<h2><%= link_to post.title, post_path(post) %></h2>
+<p><%= post.summary %></p>
+<p><small><%= post.created_at.to_date.strftime("%d %B, %Y") %></small></p>
+<%= link_to 'Edit', edit_post_path(post) %>
+<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+<hr>

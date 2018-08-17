@@ -14,6 +14,9 @@ class PostsController < ApplicationController
     end
     
     def create
+#        if check_nil
+#            render :new
+#        end
         @post = Post.new(post_params)
         if @post.save
             redirect_to @post, notice: 'Post has been created'
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
     end
     
     def update
-        if @post.update_attributes(post_params)
+        if @post.update(post_params)
             redirect_to @post
         else
             render :edit
@@ -45,6 +48,11 @@ class PostsController < ApplicationController
     end
     
     def post_params
-        params.require(:post).permit(:title,:summary,:body)
+        params.require(:post).permit(:title, :summary, :body)
     end
+    
+    def check_nil
+        params[:title].nil?
+    end
+    
 end

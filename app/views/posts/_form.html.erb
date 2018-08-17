@@ -1,3 +1,14 @@
+<% if @post.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+        <h5><%= t('common.errors') %></h5>
+        <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <div class="card">
     <div class="card-title">
         <h1><%= header %></h1>
@@ -23,7 +34,8 @@
             <hr>
             
             <div>
-                <%= f.submit 'Save', class: 'form-control btn btn-primary' %>
+                <%= link_to 'Back', :back %>
+                <%= f.submit 'Save', class: 'btn btn-primary' %>
             </div>
 
         <% end %>
