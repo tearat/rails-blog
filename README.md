@@ -5,20 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* bundle install
+* rake db:migrate
+* rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+RAILS_ENV=production rake secret
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake assets:precompile
+\config\environments\production.rb ... config.assets.compile = true
+RAILS_ENV=production rails s
