@@ -14,13 +14,15 @@
  *= require_self
  */
 
+@import "bootstrap";
+
 $black: #111;
 $white: #eee;
 $blue: royalblue;
 
 body {
-    margin: 0;
-    padding: 0;
+//    margin: 0;
+//    padding: 0;
     background-color: $white;
     font-size: 20px;
     a {
@@ -33,10 +35,15 @@ body {
     padding: 10px;
     a {
         color: $white;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }
 
 #app {
+    .card {
+        padding: 20px;
+    }
     padding: 10px;
     h1 {
         margin: 0;
